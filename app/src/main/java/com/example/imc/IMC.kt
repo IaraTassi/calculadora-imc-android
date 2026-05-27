@@ -3,19 +3,22 @@ package com.example.imc
 import android.os.Parcel
 import android.os.Parcelable
 
-class IMC(var nome: String?, var peso: Float, var altura: Float, var imc: Float) :
-    Parcelable {
+class IMC(
+    var nome: String?,
+    var peso: Float,
+    var altura: Float,
+    var imc: Float
+) : Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readFloat(),
         parcel.readFloat(),
         parcel.readFloat()
-    ) {
-    }
+    )
 
-    constructor(name: String, peso: Float, altura: Float) : this(
-        name,
+    constructor(nome: String, peso: Float, altura: Float) : this(
+        nome,
         peso,
         altura,
         0.0f
@@ -23,22 +26,24 @@ class IMC(var nome: String?, var peso: Float, var altura: Float, var imc: Float)
 
     fun calcular(): String {
 
-        val alt = altura / 100
-        val calc = (peso / (alt * alt)).toFloat()
+        if (altura == 0f) {
+            return "Altura inválida"
+        }
 
-        val msg = when (calc) {
+        val alturaEmMetros = altura / 100f
+
+        imc = peso / (alturaEmMetros * alturaEmMetros)
+
+        return when (imc) {
             in 0f..16f -> "Magreza grave"
             in 16f..17f -> "Magreza moderada"
-            in 17f..19f -> "Magreza leve"
-            in 19f..25f -> "Saudável"
+            in 17f..18.5f -> "Magreza leve"
+            in 18.5f..25f -> "Saudável"
             in 25f..30f -> "Sobrepeso"
             in 30f..35f -> "Obesidade I"
             in 35f..40f -> "Obesidade II"
             else -> "Obesidade mórbida"
         }
-
-        imc = calc
-        return msg
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -53,6 +58,7 @@ class IMC(var nome: String?, var peso: Float, var altura: Float, var imc: Float)
     }
 
     companion object CREATOR : Parcelable.Creator<IMC> {
+
         override fun createFromParcel(parcel: Parcel): IMC {
             return IMC(parcel)
         }

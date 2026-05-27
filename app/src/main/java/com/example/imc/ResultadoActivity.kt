@@ -5,26 +5,37 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ResultadoActivity : AppCompatActivity() {
-
-    private lateinit var titleDensidadeCorporal: TextView
-    private lateinit var textViewHeaderDensidadeCorporal: TextView
-    private lateinit var textViewResultadoDensidadeCorporal: TextView
+    private lateinit var textNome: TextView
+    private lateinit var textClassificacao: TextView
+    private lateinit var textImc: TextView
+    private lateinit var textPeso: TextView
+    private lateinit var textAltura: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultado2)
 
-        // Inicializando os componentes com findViewById
-        titleDensidadeCorporal = findViewById(R.id.titleDensidadeCorporal)
-        textViewHeaderDensidadeCorporal = findViewById(R.id.textViewHeaderDensidadeCorporal)
-        textViewResultadoDensidadeCorporal = findViewById(R.id.textViewResultadoDensidadeCorporal)
+        initViews()
+        bindData()
+    }
 
-        // Obtendo o objeto IMC passado pela Intent
-        val imc = intent.getParcelableExtra<IMC>("value")
+    private fun initViews() {
+        textNome = findViewById(R.id.textNome)
+        textClassificacao = findViewById(R.id.textClassificacao)
+        textImc = findViewById(R.id.textImc)
+        textPeso = findViewById(R.id.textPeso)
+        textAltura = findViewById(R.id.textAltura)
+    }
 
-        // Configurando os textos dos componentes da UI
-        titleDensidadeCorporal.text = imc?.nome.toString()
-        textViewHeaderDensidadeCorporal.text = imc?.calcular()
-        textViewResultadoDensidadeCorporal.text = imc?.imc.toString()
+    private fun bindData() {
+
+        val imc = intent.getParcelableExtra<IMC>("value") ?: return
+
+        textNome.text = imc.nome ?: "Sem nome"
+        textClassificacao.text = imc.calcular()
+        textImc.text = "Seu IMC %.2f".format(imc.imc)
+        textPeso.text = "Seu Peso %.1f".format(imc.peso)
+        textAltura.text = "Sua Altura %.1f".format(imc.altura)
+
     }
 }
