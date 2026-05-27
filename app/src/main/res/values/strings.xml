@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Teste De IMC</string>
-    <string name="labelSexo">Sexo</string>
-    <string name="labelNome">Nome</string>
-    <string name="labelPeso">Peso</string>
-    <string name="labelAltura">Altura</string>
-    <string name="labelCalcularPercentual">Calcular</string>
 
-    <string name="labelResultadoPercentualGordura">Resultados do Teste</string>
-    <string name="labelTituloFormTeste">IMC - TESTE</string>
-    <string name="labelBotaoVoltar">Voltar</string>
+    <string name="app_name">Calculadora IMC</string>
 
+    <string name="title_form">Digite seus dados</string>
+    <string name="title_result">Resultado do teste</string>
 
-    <string name="contentDescriptionPeso">Peso(em quilos)</string>
-    <string name="contentDescriptionAltura">Altura(em centímetros)</string>
-    <string name="contentDescriptionNome">Seu nome</string>
-    <string name="contentDescriptionTituloFormTeste">Cálculo de IMC</string>
+    <string name="label_nome">Nome</string>
+    <string name="label_peso">Peso</string>
+    <string name="label_altura">Altura</string>
+    <string name="label_calcular">Calcular</string>
 
-    <string name="contentDescriptionSexo">Informe o sexo</string>
-    <string name="contentDescriptionResultadosTestePercentualGordura">Resultado do teste de IMC</string>
-    <string name="labelTextTitleResultTestPercentualGordura">Resultado do IMC</string>
-    <string name="labelTextViewHeaderDensidadeCorporal">SEU IMC</string>
+    <string name="hint_nome">Digite seu nome</string>
+    <string name="hint_peso">Digite seu peso</string>
+    <string name="hint_altura">Digite sua altura</string>
 
+    <string name="desc_nome">Digite seu nome</string>
+    <string name="desc_peso">Digite seu peso em quilos</string>
+    <string name="desc_altura">Digite sua altura em centímetros</string>
+
+    <string name="result_nome">Nome</string>
+    <string name="result_tipo">Classificação</string>
+    <string name="result_imc">Seu IMC</string>
+    <string name="result_peso">Seu Peso</string>
+    <string name="result_altura">Sua Altura</string>
+
+    <string name="botao_voltar">Voltar</string>
 
 </resources>
