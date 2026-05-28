@@ -1,84 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollResultado"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardBackground"
     android:padding="24dp"
     tools:context=".ResultadoActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/containerResult"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/textTituloResultado"
+            style="@style/styleTituloApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_result"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:gravity="center"
+            android:text="@string/title_form"/>
+
+        <TextView
+            android:id="@+id/textSubtituloResultado"
+            style="@style/styleSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/title_result"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="@color/backgroundPrimary"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="6dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:gravity="center_horizontal"
+                android:padding="24dp">
 
                 <TextView
                     android:id="@+id/textNome"
+                    style="@style/styleTituloApp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
                     tools:text="Maria" />
 
                 <TextView
                     android:id="@+id/textClassificacao"
+                    style="@style/styleHeaderResultado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     tools:text="Saudável" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorPrimaryDark" />
 
                 <TextView
                     android:id="@+id/textImc"
+                    style="@style/styleValorResultado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="14dp"
                     tools:text="Seu IMC: 22.5" />
 
                 <TextView
                     android:id="@+id/textPeso"
+                    style="@style/styleValorResultado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="14dp"
                     tools:text="Seu Peso: 70kg" />
 
                 <TextView
                     android:id="@+id/textAltura"
+                    style="@style/styleValorResultado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="14dp"
                     tools:text="Sua Altura: 1.70m" />
+
+                <Button
+                    android:id="@+id/btnFecharResultados"
+                    style="@style/styleContainedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/botao_voltar" />
+
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <Button
-            android:id="@+id/btnFecharResultados"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/botao_voltar" />
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

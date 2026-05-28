@@ -11,10 +11,6 @@
     <string name="label_altura">Altura</string>
     <string name="label_calcular">Calcular</string>
 
-    <string name="hint_nome">Digite seu nome</string>
-    <string name="hint_peso">Digite seu peso</string>
-    <string name="hint_altura">Digite sua altura</string>
-
     <string name="desc_nome">Digite seu nome</string>
     <string name="desc_peso">Digite seu peso em quilos</string>
     <string name="desc_altura">Digite sua altura em centímetros</string>

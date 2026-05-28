@@ -5,99 +5,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@color/backgroundPrimary"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textTituloForm"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/containerCenter"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/title_form"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.45">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutEditNome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/label_nome"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/textTituloForm"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/textTituloApp"
+            style="@style/styleTituloApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editNome"
+        <TextView
+            android:id="@+id/textSubtitulo"
+            style="@style/styleSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/title_form"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFormulario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_nome"
-            android:inputType="textPersonName" />
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="6dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutEditPeso"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/label_peso"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/layoutEditNome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutEditNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_nome"
+                    android:textColorHint="@color/textSecondary"
+                    app:errorEnabled="true"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@color/backgroundPrimary"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/textSecondary"
+                    app:boxCornerRadiusTopStart="4dp"
+                    app:boxCornerRadiusTopEnd="4dp"
+                    app:boxCornerRadiusBottomStart="4dp"
+                    app:boxCornerRadiusBottomEnd="4dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editPeso"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_peso"
-            android:inputType="numberDecimal" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:textColor="@color/textPrimary"
+                        android:background="@null"
+                        android:inputType="textPersonName"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutEditAltura"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/label_altura"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/layoutEditPeso"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutEditPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_peso"
+                    android:textColorHint="@color/textSecondary"
+                    app:errorEnabled="true"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@color/backgroundPrimary"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/textSecondary"
+                    app:boxCornerRadiusTopStart="4dp"
+                    app:boxCornerRadiusTopEnd="4dp"
+                    app:boxCornerRadiusBottomStart="4dp"
+                    app:boxCornerRadiusBottomEnd="4dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editAltura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_altura"
-            android:inputType="numberDecimal" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editPeso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:background="@color/backgroundPrimary"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:textColorHint="@color/textSecondary"
+                        android:textColor="@color/textPrimary"
+                        android:inputType="numberDecimal"
+                        />
 
-    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnCalc"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/label_calcular"
-        app:layout_constraintTop_toBottomOf="@id/layoutEditAltura"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutEditAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/label_altura"
+                    android:textColorHint="@color/textSecondary"
+                    app:errorEnabled="true"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@color/backgroundPrimary"
+                    app:boxStrokeColor="@color/colorAccent"
+                    app:hintTextColor="@color/textSecondary"
+                    app:boxCornerRadiusTopStart="4dp"
+                    app:boxCornerRadiusTopEnd="4dp"
+                    app:boxCornerRadiusBottomStart="4dp"
+                    app:boxCornerRadiusBottomEnd="4dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editAltura"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:background="@color/backgroundPrimary"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:textColor="@color/textPrimary"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnCalc"
+                    style="@style/styleContainedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/label_calcular" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
